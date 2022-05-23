@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
@@ -70,7 +70,23 @@ const currencies = new Map([
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
+*/
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-/////////////////////////////////////////////////
+for (const i of movements){
+  if(i > 0){
+    console.log(`You Deposited ${i}`)
+  }
+  else{
+    console.log(`You Withdrew `,Math.abs(i))
+  }
+}
+movements.forEach(function(mov,i,arr){
+  if(mov > 0){
+    console.log(`${i+1}. You Deposited in forEach ${mov}`)
+  }
+  else{
+    console.log(`${i+1}. You Withdrew in forEach`,Math.abs(mov))
+  }
+})
