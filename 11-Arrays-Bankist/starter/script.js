@@ -179,3 +179,15 @@ print(includeTwo)
 
 
 
+const currencies = new map([
+  ['USD', 'United States Dollar'],
+  ['EUR','Euro'],
+  ['GBP', 'Pound Sterling']
+])
+
+currencies.forEach(function(value,key,map){
+  console.log(`${key} : ${value}`);
+})
+
+const currenciesSet = new Set(['USD', 'GBP','USD','EUR','EUR'])
+console.log(currenciesSet)
