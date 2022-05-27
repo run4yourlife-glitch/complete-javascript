@@ -58,8 +58,19 @@ const checkDogs = function (dogsJulia, dogsKate) {
   };
   // checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
   checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+//   const arrMay = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+//   const total = 0;
+//   const arrMayReduce = arrMay.reduce(
+//     (previousValue, currentValue) => previousValue + currentValue,
+//     total
 
-
+//   );
+// let forthis = 0;
+// for(let i = 0; i<arrMay.length;i++){
+//   forthis+=arrMay[i]
+//   console.log(forthis)
+// }
+// console.log(arrMayReduce)
 
 
 
