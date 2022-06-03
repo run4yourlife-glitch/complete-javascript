@@ -8,7 +8,7 @@
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
-  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300,5500,-1000],
   interestRate: 1.2, // %
   pin: 1111,
 };
@@ -22,7 +22,7 @@ const account2 = {
 
 const account3 = {
   owner: 'Steven Thomas Williams',
-  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  movements : [200, -200, 340, -300, -20, 50, 400, -460],
   interestRate: 0.7,
   pin: 3333,
 };
@@ -63,8 +63,37 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 const accounts = [account1, account2, account3, account4];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUSD = 1.1;
+const movementsUSD = movements.map(function(mov){
+  
+  return mov*eurToUSD;
+})
+
+const movementsUSDarrowfunction = movements.map(mov=>mov*eurToUSD)
+movementsUSDarrowfunction.push("Arrow Function")
+console.log(movementsUSDarrowfunction)
+
+const movementsUSDfor = [];
+for(const x of movements){
+  movementsUSDfor.push(x*eurToUSD)
+}
+// console.log(movements)
+// console.log(movementsUSD)
+console.log(movementsUSDfor)
 
 
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log("Movements Description: ")
+console.log(movementsDescriptions)
+
+/* 
 const displayMovements = function (movements)
 // [200, 450, -400, 3000, -650, -130, 70, 1300]
 {
@@ -78,12 +107,16 @@ const displayMovements = function (movements)
     `<div class="movements__row">
       <div class="movements__type movements__type--${type}">${i+1} ${type}</div>
       <div class="movements__value">${mov}</div>
-    </div>`
+    </div>
+    <div>
+      <h1>Hello</h1>
+    </div>
+    `
     containerMovements.insertAdjacentHTML('afterbegin', html)
   })
 };
 
 displayMovements(account1.movements)
-
+*/
 
 
