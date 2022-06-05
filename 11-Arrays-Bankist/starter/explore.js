@@ -1,3 +1,4 @@
+/*
 const OnePiece = [
     {name: 'Sabo',  price: 602_000_000},
     {name: 'Charlotte Perospero',  price:700_000_000},
@@ -97,3 +98,23 @@ const OnePiece = [
   currenciesSet.forEach(function(value,__,map){
     console.log(`${value}: ${value}`)
   })
+
+
+
+  */
+let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']
+let cars = ['GTR','Mitsubishi','Toyota','Hyundai','Foton']
+/**
+ * Filter array items based on search criteria (query)
+ */
+// function filterItems(arr, query) {
+//   return arr.filter(function(el) {
+//     return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+//   })
+// }
+filterItems((arr, query)=>arr.filter((el)=>el.toLowerCase().indexOf(query.toLowerCase() !== -1))) 
+
+
+console.log(filterItems(fruits, 'app'))  // ['apple', 'grapes']
+console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']
+console.log(filterItems(cars,'on'))

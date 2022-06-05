@@ -34,6 +34,13 @@ const account4 = {
   pin: 4444,
 };
 
+const account5= {
+  owner: 'Jomari Sarmiento Abejo',
+  movements: [100,500,-300,900,100],
+  interestRate: 1,
+  pin: 1234,
+}
+
 
 /////////////////////////////////////////////////
 // Elements
@@ -62,7 +69,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const accounts = [account1, account2, account3, account4];
+const accounts = [account1, account2, account3, account4 , account5];
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const eurToUSD = 1.1;
@@ -73,7 +80,7 @@ const movementsUSD = movements.map(function(mov){
 
 const movementsUSDarrowfunction = movements.map(mov=>mov*eurToUSD)
 movementsUSDarrowfunction.push("Arrow Function")
-console.log(movementsUSDarrowfunction)
+// console.log(movementsUSDarrowfunction)
 
 const movementsUSDfor = [];
 for(const x of movements){
@@ -81,7 +88,7 @@ for(const x of movements){
 }
 // console.log(movements)
 // console.log(movementsUSD)
-console.log(movementsUSDfor)
+// console.log(movementsUSDfor)
 
 
 const movementsDescriptions = movements.map(
@@ -90,10 +97,8 @@ const movementsDescriptions = movements.map(
       mov
     )}`
 );
-console.log("Movements Description: ")
-console.log(movementsDescriptions)
 
-/* 
+
 const displayMovements = function (movements)
 // [200, 450, -400, 3000, -650, -130, 70, 1300]
 {
@@ -108,15 +113,51 @@ const displayMovements = function (movements)
       <div class="movements__type movements__type--${type}">${i+1} ${type}</div>
       <div class="movements__value">${mov}</div>
     </div>
-    <div>
-      <h1>Hello</h1>
-    </div>
+
     `
     containerMovements.insertAdjacentHTML('afterbegin', html)
   })
 };
-
 displayMovements(account1.movements)
+
+
+/*
+const createUsernames = function(accs){
+  accs.forEach(function(acc){
+    acc.username = acc.owner
+    .toLowefrCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
+  })
+}
+
+createUsernames(accounts)
+console.log(accounts)
+console.log("qwerty")
 */
+
+const deposits = movements.filter(mov => (mov > 0));
+deposits.push("Deposits")
+console.log(deposits)
+
+movements.push(-1500)
+
+const withdrawals = movements.filter(mov  =>  (mov<0));
+console.log(withdrawals)
+
+const balance = movements.reduce(function(acc, cur,i,arr){
+  console.log(`Number ${i} : ${acc}`)
+  return acc+=cur
+},0)
+
+console.log(balance)
+
+let balance2 = 0;
+for (const mov of movements) balance2 += 2;
+console.log(balance2)
+
+
+
 
 
